@@ -1,5 +1,12 @@
 class Vehicle
+	@@numberOfVehicle=0
 
+	def self.numberOfVehicle
+		puts "There are #{numberOfVehicle} Vehicles have been created."
+	end
+	def initialize
+		@@numberOfVehicle+=1
+	end
 	def self.gasMileage(gas,mile)
 		puts "#{mile/gas} miles per gallon of gas"
 	end
