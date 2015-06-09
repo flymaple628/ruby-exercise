@@ -6,7 +6,7 @@ class MyCar
 		@color=color
 		@speed=0
 	end
-	attr_accessor:year
+	attr_reader:year
 	attr_accessor:model
 	attr_accessor:color
 
@@ -31,6 +31,5 @@ end
 mycar=MyCar.new("1995","RX8","red")
 puts "my #{mycar.color} color is #{mycar.model} since #{mycar.year}"
 mycar.color="yellow"
-mycar.year="2015"
 mycar.model="camare"
-puts "my new #{mycar.color} color is #{mycar.model} since #{mycar.year}"
+puts "my #{mycar.color} color is #{mycar.model} since #{mycar.year}"
