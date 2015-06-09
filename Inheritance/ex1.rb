@@ -7,25 +7,9 @@ end
 class Vehicle
 	@@numberOfVehicle=0
 
-	def self.numberOfVehicle
-		puts "There are #{numberOfVehicle} Vehicles have been created."
-	end
-	def initialize
+
+	def initialize(year,model,color)
 		@@numberOfVehicle+=1
-	end
-	def self.gasMileage(gas,mile)
-		puts "#{mile/gas} miles per gallon of gas"
-	end
-end
-
-class MyTruck
-	include Payload
-	NumerOfDoors=2
-end
-class MyCar<Vehicle
-
-		NumerOfDoors=2
-		def initialize(year,model,color)
 		@year=year
 		@model=model
 		@color=color
@@ -34,6 +18,19 @@ class MyCar<Vehicle
 	attr_reader:year
 	attr_accessor:model
 	attr_accessor:color
+
+
+	def self.numberOfVehicle
+		puts "There are #{numberOfVehicle} Vehicles have been created."
+	end
+
+	def self.gasMileage(gas,mile)
+		puts "#{mile/gas} miles per gallon of gas"
+	end
+
+	def age
+		"your #{self.model} is #{age_count}"
+	end
 
 	def speedUp(num)
 		@speed+=num
@@ -52,9 +49,25 @@ class MyCar<Vehicle
 		@speed=0
 		puts "Your are shut off."
 	end
+	private
+	def age_count
+		return Time.now.year-self.year
+	end
+end
+
+class MyTruck
+	include Payload
+	NumerOfDoors=2
+end
+class MyCar<Vehicle
+
+		NumerOfDoors=2
+
+
 
 	def to_s
 		puts "my #{@color} color is #{@model} since #{@year}"
 	end
 end
+
 
