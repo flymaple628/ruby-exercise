@@ -1,40 +1,40 @@
 class MyCar
 
-  def initialize(year, model, color)
-    @year = year
-    @model = model
-    @color = color
-    @current_speed = 0
+  def initialize(year,model,color)
+    @year=year
+    @model=model
+    @color=color
+    @speed=0
   end
+  attr_reader:year
+  attr_accessor:model
+  attr_accessor:color
 
-  def speed_up(number)
-    @current_speed += number
-    puts "You push the gas and accelerate #{number} mph."
-  end
+    def speedUp(num)
+      @speed+=num
+      puts "Your speed is #{@speed}"
+    end
 
-  def brake(number)
-    @current_speed -= number
-    puts "You push the brake and decelerate #{number} mph."
-  end
+    def speednow
+      puts "Your speed is #{@speed}"
+    end
 
-  def current_speed
-    puts "You are now going #{@current_speed} mph."
-  end
-
-  def shut_down
-    @current_speed = 0
-    puts "Let's park this bad boy!"
+    def brake(num)
+      @speed-=num
+      puts "Your speed is #{@speed}"
+    end
+    def shutoff()
+      @speed=0
+      puts "Your are shut off."
+    end
+    def spray_paint(color)
+    self.color = color
+    puts "You new #{color} car looks great!"
   end
 end
-
-lumina = MyCar.new(1997, 'chevy lumina', 'white')
-lumina.speed_up(20)
-lumina.current_speed
-lumina.speed_up(20)
-lumina.current_speed
-lumina.brake(20)
-lumina.current_speed
-lumina.brake(20)
-lumina.current_speed
-lumina.shut_down
-lumina.current_speed
+mycar=MyCar.new("1995","RX8","red")
+puts "my #{mycar.color} color is #{mycar.model} since #{mycar.year}"
+mycar.color="yellow"
+mycar.model="camare"
+puts "my #{mycar.color} color is #{mycar.model} since #{mycar.year}"
+mycar.spray_paint("black")
