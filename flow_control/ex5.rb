@@ -12,3 +12,7 @@ def juge(num)
 	end
 end
 #
+juge(20)
+juge(50)
+juge(100)
+juge(-1)
