@@ -1,3 +1,9 @@
+module Payload
+	def load(wei)
+		puts	(wei>200)? "too heavry":"safe weight"
+	end
+
+end
 class Vehicle
 	@@numberOfVehicle=0
 
@@ -13,9 +19,11 @@ class Vehicle
 end
 
 class MyTruck
+	include Payload
 	NumerOfDoors=2
 end
 class MyCar<Vehicle
+
 		NumerOfDoors=2
 		def initialize(year,model,color)
 		@year=year
@@ -49,3 +57,4 @@ class MyCar<Vehicle
 		puts "my #{@color} color is #{@model} since #{@year}"
 	end
 end
+
